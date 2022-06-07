@@ -153,7 +153,8 @@
 #define UDPBUFFERS	       32768
 #define EXCLBUFFERS	       32768
 #else
-#define RESOLVER_NTASKS_PERCPU 8
+// RESEARCH CHANGES
+#define RESOLVER_NTASKS_PERCPU 1
 #define UDPBUFFERS	       1000
 #define EXCLBUFFERS	       4096
 #endif /* TUNE_LARGE */

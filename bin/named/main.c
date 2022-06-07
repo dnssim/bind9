@@ -919,7 +919,8 @@ create_managers(void) {
 		return (ISC_R_UNEXPECTED);
 	}
 
-	result = isc_taskmgr_create(named_g_mctx, named_g_cpus, 0, named_g_nm,
+	// RESEARCH CHANGES
+	result = isc_taskmgr_create(named_g_mctx, 1, 0, named_g_nm,
 				    &named_g_taskmgr);
 	if (result != ISC_R_SUCCESS) {
 		UNEXPECTED_ERROR(__FILE__, __LINE__,
@@ -1049,7 +1050,9 @@ setup(void) {
 	/*
 	 * Check for the number of cpu's before named_os_chroot().
 	 */
-	named_g_cpus_detected = isc_os_ncpus();
+	//named_g_cpus_detected = isc_os_ncpus();
+	// RESEARCH CHANGES
+	named_g_cpus_detected = 1;
 
 	named_os_chroot(named_g_chrootdir);
 
